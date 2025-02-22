@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.sortingAlgorithms.BubbleSort;
 import org.example.sortingAlgorithms.InsertionSort;
+import org.example.sortingAlgorithms.MergeSort;
 import org.example.sortingAlgorithms.SelectionSort;
 
 import java.util.Arrays;
@@ -13,8 +14,9 @@ public class Main {
         BubbleSort sortVal = new BubbleSort(n);
         InsertionSort inserVal = new InsertionSort(n);
         SelectionSort selectionSort = new SelectionSort(n);
+        MergeSort mergeSort = new MergeSort(n);
 
-        Arrays.stream(selectionSort.sort()).forEach(num-> System.out.print(num));
+        Arrays.stream(mergeSort.sort()).forEach(num-> System.out.print(num));
 
     }
 }
