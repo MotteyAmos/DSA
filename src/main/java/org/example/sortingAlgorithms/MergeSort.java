@@ -32,6 +32,7 @@ public class MergeSort {
 //        System.out.println("");
 //        Arrays.stream(rArray).forEach(n->System.out.print(n));
 
+
         int rIdx = 0;
         int lIdx = 0;
         int idxPos = start;
