@@ -1,6 +1,5 @@
 package org.example.sortingAlgorithms;
 
-import java.util.Arrays;
 
 public class QuickSort {
     int[] nums;

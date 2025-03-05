@@ -13,9 +13,11 @@ public class Main {
         SelectionSort selectionSort = new SelectionSort(n);
         MergeSort mergeSort = new MergeSort(n);
         QuickSort quickSort = new QuickSort(n);
+        HeepSort heepSort = new HeepSort(n);
 
-
-        Arrays.stream(quickSort.sort()).forEach(num-> System.out.print(num));
+//        int[] j = new int[5];
+//        System.out.println(j[1]);
+//        Arrays.stream(quickSort.sort()).forEach(num-> System.out.print(num));
 
     }
 }
