@@ -14,36 +14,33 @@ public class HeepSort {
 
     public void swapHeap(int idx1, int idx2){
         // use when creating a heap tree
-        int temp = heapArray[idx1];
-        heapArray[idx1] = this.nums[idx2];
-        heapArray[idx2] = temp;
+        int temp = this.nums[idx1];
+        this.nums[idx1] = this.nums[idx2];
+        this.nums[idx2] = temp;
     }
     public void heap(){
 
-        for (int i= 0;i<this.nums.length; i++ ){
-            if (i==0){
-                heapArray[0] = this.nums[0];
-            }
-            else{
-                int p = i;
+        for (int i= 1;i<this.nums.length; i++ ){
 
-                while (p > 0){
-                    int parentIdx = (p +1) /2;
-                    if (parentIdx < 0) {
-                        break;
-                    }
-                    p = parentIdx -1;
+            int p = i;
 
-                    if (heapArray[parentIdx-1] < nums[i]){
-                        swapHeap(parentIdx-1, i);
-                    }else{
-                        heapArray[i] = nums[i];
-                    }
+            while (p > 0){
+                int parentIdx = (p +1) /2;
+                System.out.println(parentIdx + " " + i );
+
+                p = parentIdx -1;
+
+                if (parentIdx != 1){
+                    parentIdx +=1;
+                }
+                if (this.nums[p] < this.nums[parentIdx]){
+                    swapHeap(p, parentIdx);
                 }
             }
 
+
         }
         System.out.println("");
-        Arrays.stream(heapArray).forEach(num ->System.out.print(num));
+        Arrays.stream(nums).forEach(num ->System.out.print(num));
     }
 }
