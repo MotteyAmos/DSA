@@ -4,43 +4,49 @@ import java.util.Arrays;
 
 public class HeepSort {
     int[] nums;
-    int[] heapArray;
+
 
     public HeepSort(int[] nums){
         this.nums = nums;
-        this.heapArray =  new int[nums.length];
-        heap();
+        heap(this.nums, this.nums.length);
+        sort();
+        Arrays.stream(this.nums).forEach(num -> System.out.print(num));
+
     }
 
-    public void swapHeap(int idx1, int idx2){
+    public void swapHeap(int idx1, int idx2, int[] swapArray){
         // use when creating a heap tree
-        int temp = this.nums[idx1];
-        this.nums[idx1] = this.nums[idx2];
-        this.nums[idx2] = temp;
+        int temp = swapArray[idx1];
+        swapArray[idx1] = swapArray[idx2];
+        swapArray[idx2] = temp;
     }
-    public void heap(){
+    public void heap(int[] heapNums, int endAt){
 
-        for (int i= 1;i<this.nums.length; i++ ){
+        for (int i= 2;i<=endAt; i++ ){
 
-            int p = i;
+            int parentIdx = i;
+            int childIdx =i;
 
-            while (p > 0){
-                int parentIdx = (p +1) /2;
-                System.out.println(parentIdx + " " + i );
+            while (parentIdx > 1){
+                parentIdx = parentIdx /2;
 
-                p = parentIdx -1;
-
-                if (parentIdx != 1){
-                    parentIdx +=1;
-                }
-                if (this.nums[p] < this.nums[parentIdx]){
-                    swapHeap(p, parentIdx);
+                if (heapNums[childIdx-1] > heapNums[parentIdx-1]){
+                    swapHeap(childIdx-1, parentIdx-1, heapNums);
+                    childIdx = parentIdx;
                 }
             }
+        }
+    }
+
+    public void sort(){
+        for (int i=this.nums.length-1; i>0;i--){
+            int temp = this.nums[0];
+            this.nums[0] = this.nums[i];
+            this.nums[i] = temp;
+
+            heap(this.nums, i);
 
 
         }
-        System.out.println("");
-        Arrays.stream(nums).forEach(num ->System.out.print(num));
     }
 }
