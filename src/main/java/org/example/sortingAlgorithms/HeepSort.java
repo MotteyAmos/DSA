@@ -8,8 +8,6 @@ public class HeepSort {
 
     public HeepSort(int[] nums){
         this.nums = nums;
-        heap(this.nums, this.nums.length);
-        sort();
     }
 
     public void swapHeap(int idx1, int idx2, int[] swapArray){
@@ -34,12 +32,14 @@ public class HeepSort {
         }
     }
 
-    public void sort(){
+    public int[] sort(){
+        heap(this.nums, this.nums.length);
+
         for (int i=this.nums.length-1; i>0;i--){
             swapHeap(0,i,this.nums);
             heap(this.nums, i);
-
-
         }
+
+        return this.nums;
     }
 }
