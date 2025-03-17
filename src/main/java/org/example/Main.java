@@ -8,7 +8,8 @@ public class Main {
     public static void main(String[] args) {
 
         int[] n = {2,7,4,1,5,3};
-//        int[] n = {3,5,4,1,2};
+
+
         BubbleSort sortVal = new BubbleSort(n);
         InsertionSort inserVal = new InsertionSort(n);
         SelectionSort selectionSort = new SelectionSort(n);
@@ -16,10 +17,10 @@ public class Main {
         QuickSort quickSort = new QuickSort(n);
         HeepSort heepSort = new HeepSort(n);
         Hippify hippify = new Hippify(n);
-
+        Hippify hippify1 = new Hippify(n);
 //        int[] j = new int[5];
 //        System.out.println(j[1]);
-//        Arrays.stream(quickSort.sort()).forEach(num-> System.out.print(num));
+        Arrays.stream(hippify1.sort()).forEach(num-> System.out.print(num));
 
     }
 }
