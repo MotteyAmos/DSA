@@ -4,6 +4,10 @@ public class Inorder<T> {
 
     public Node<T> root;
 
+    public void travese(){
+
+
+    }
 
     public Node traverseLeft(Node node){
         if (node.left == null){
